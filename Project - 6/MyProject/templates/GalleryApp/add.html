@@ -1,0 +1,31 @@
+{% extends 'GalleryApp/base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Add</title>
+{% endblock title %}
+
+{% block body %}
+<div class="container my-3 px-3 border shadow text-center rounded bg bg-success">
+    <h1 class="display-7 text-white">New Image</h1>
+</div>
+
+<div class="container pt-3 shadow p-5 rounded">
+    <form action="{% url 'add' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {% for f in forms %}
+        <div class="mb-3 p-2 text-success fw-bolder">
+            {{f.label_tag}} 
+            <span class="add">{{f}}</span>
+            <span style="color: red;">{{f.errors}}</span>
+        </div>
+        {% endfor %}
+
+        <div class="butt">
+            <input type="submit" value="Save" class="btn btn-success">
+        </div>
+    </form>
+</div>
+{% endblock body %}
+

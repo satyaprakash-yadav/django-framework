@@ -1,0 +1,34 @@
+{% extends 'MyApp/base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Home Page</title>
+{% endblock title %}
+
+{% block body %}
+
+<!-- main container -->
+<div class="container">
+
+    <div class="container text-center p-4">
+        <img src="{% static 'MyApp/images/resume.jpg' %}" alt="No Image Found" height='300px'>
+    </div>
+
+    <div class="container">
+        <p class="lead"><strong>Hello My Self Satyaprakash Yadav</strong></p>
+    </div>
+
+    <div class="container">
+        <p class="lead" style='text-align:justify;'>I want to thank you for this opportunity.I am Satyaprakash Yadav, from Hyderabad.Currently, associated with ABC Tech Pvt Ltd as a Junior Software Engineer for the last year.I have a good knowledge of C, C++, and Java. I have both an urge and a capacity to learn new technologies. I’m also good at data structures and algorithms.
+        </p>
+    </div>
+
+    <div class="container">
+        <a href="mailto:satyay3556@gmail.com"><button class="btn btn-success">Hire Me</button></a>
+        <a href="{% url 'contact' %}" class="btn btn-success">Contact</a>
+    </div>
+
+</div>
+
+{% endblock body %}
+

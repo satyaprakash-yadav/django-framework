@@ -1,0 +1,55 @@
+body{
+    background-color: azure;
+}
+
+.container-fluid a i{
+    color: green;
+}
+
+.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show >.nav-link {
+    color: rgba(0,0,0,.55);
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: green;
+}
+
+.form-control:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+} 
+
+p input{
+    width: 30%;
+    /* float: right; */
+    /* margin-right:50%; */
+}
+
+input{
+    font-size: large;
+}
+
+img{
+    float: right;
+    height: 55vh;
+}
+
+.add{
+    width: 30%;
+    float: right;
+    margin-right:50%;
+}
+
+.butt{
+    margin-top: 25%;
+    margin-left: 10px;
+}
+
+textarea{
+    width: 610px;
+}
+
+img {
+    height:200px;
+}
+

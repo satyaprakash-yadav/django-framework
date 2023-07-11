@@ -1,0 +1,25 @@
+body{
+    background-color: aliceblue;
+}
+
+.d-flex p{
+    padding-left: 10px;
+    margin-top: -1px;
+}
+
+.d-flex i{
+    color: green;
+}
+
+.d-flex p span{
+    color: green;
+}
+
+.form-control:focus{
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.form-label{
+    color: green;
+}

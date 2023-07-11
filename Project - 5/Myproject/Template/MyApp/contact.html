@@ -1,0 +1,70 @@
+{% extends 'MyApp/base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Contact Page</title>
+{% endblock title %}
+
+
+{% block body %}
+
+<!-- main container -->
+<div class="container">
+    <div class="container border rounded p-1 text-center bg-primary m-3">
+        <h1 class='text-light'>Contact Details</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-7">
+            <h4>Get in touch</h4>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Name</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your Name">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email Address</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your Email">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Contact Number</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your Number">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+                <textarea class="form-control" name="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter Your Feedback"></textarea>
+            </div>
+            <button class="btn btn-success">Send</button>
+        </div>
+        <div class="col-md-5">
+            <h4>Contact us</h4><hr>
+            <div class="mt-5">
+
+                <!-- address container-->
+                <div class="d-flex">
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <p><span>Address:</span> 123 east 9th street, suite 12 Andheri, Mumabi - 400001</p>
+                </div>
+
+                <!-- phone container -->
+                <div class="d-flex">
+                    <i class="bi bi-telephone-fill"></i>
+                    <p><span>Contact:</span> 1234567890</p>
+                </div>
+
+                <!-- email container -->
+                <div class="d-flex">
+                    <i class="bi bi-envelope-fill"></i>
+                    <p><span>Email:</span> abc123@gmail.com</p>
+                </div>
+
+                <!-- official site container -->
+                <div class="d-flex">
+                    <i class="bi bi-browser-chrome"></i>
+                    <p><span>official site:</span> www.resumeproject.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
+

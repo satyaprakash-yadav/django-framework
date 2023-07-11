@@ -1,0 +1,30 @@
+{% extends 'MyApp/base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Projects Page</title>
+{% endblock title %}
+
+{% block body %}
+<div class="container">
+
+    <div class="container border rounded p-1 text-center bg-primary m-3">
+        <h1 class="text-light">Skills Details</h1>
+    </div>
+
+    <div class="container my-5">
+        <div class="row mb-3 border-bottom p-3">
+            <div class="col-12"><h5>{{projects.0}}. Survey Application in Python</h5></div>
+
+            <div class="col-12 py-2" style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem aperiam ipsam ab non sit consectetur quasi? Consequuntur itaque alias eligendi adipisci. Quos, veniam quas.</div>
+
+            <span>
+                <a href="https://github.com/satyaprakash-yadav?tab=repositories" style="text-decoration: none;" target="blank">source code</a>
+                <a href="#" style="text-decoration: none;padding: 15px;" target="blank">demo</a>
+            </span>
+
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

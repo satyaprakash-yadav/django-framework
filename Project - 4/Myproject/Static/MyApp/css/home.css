@@ -1,0 +1,16 @@
+body{
+    background-color: azure;
+}
+
+.container-fluid a i{
+    color: green;
+}
+
+.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show >.nav-link {
+    color: rgba(0,0,0,.55);
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: green;
+}
+

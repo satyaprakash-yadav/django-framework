@@ -1,0 +1,31 @@
+{% extends 'MyApp/base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Skills Page</title>
+{% endblock title %}
+
+{% block body %}
+
+<div class="container">
+
+    <div class="container border rounded p-1 text-center bg-primary m-3">
+        <h1 class='text-light'>Skills Details</h1>
+    </div>
+
+    <div class="container my-5">
+
+        {% for key, value in skills.items %}
+        <div class="row mb-3 border-bottom p-3">
+
+            <div class="col-4">{{key}}</div>
+
+            <div class="col-8">
+                <progress max="100" value="{{value}}"></progress> {{value}}%
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock body %}
+

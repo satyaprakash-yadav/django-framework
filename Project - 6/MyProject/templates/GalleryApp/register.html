@@ -1,0 +1,29 @@
+{% extends 'GalleryApp/base.html' %}
+{% load static %}
+
+{% block body %}
+
+<div class="container my-3 p-0 border shadow text-center bg-success text-white rounded">
+    <h1>Registration Form</h1>
+</div>
+
+<div class="container shadow border p-3 rounded">
+    <form action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+        <img src="{% static 'GalleryApp/images/user.png' %}" alt="">
+        {% for f in form %}
+        <div class="my-3 px-5">
+            {{ f.label_tag }}
+            <p>{{f}}</p>
+            <span style="color: red;">{{ f.errors }}</span>
+        
+        </div>
+        {% endfor %}
+        
+        <div class="my-5 px-5">
+            <button type="submit" class="btn btn-success">Register Now</button>
+        </div>
+    </form>
+
+</div>
+{% endblock body %}

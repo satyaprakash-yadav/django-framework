@@ -1,0 +1,44 @@
+{% extends 'GalleryApp/base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Gallery</title>
+{% endblock title %}
+
+{% block body %}
+<div class="container my-5">
+    <div class="row">
+        <!-- left section -->
+        <div class="col-3">
+
+            <!-- list container -->
+            <div class="">
+                <ul class="list-group">
+                <li class="list-group-item"><a class="text-decoration-none" href="{% url 'gallery' %}">All Images</a></li>
+
+                {% for cat in categories %}
+                <li class="list-group-item"><a class="text-decoration-none" href="{% url 'category' cat.id %}">{{cat.Title}}</a></li>
+                {% endfor %}
+            </ul>
+            </div>
+        </div>
+
+        <!-- right section -->
+        <div class="col-9">
+            <div class="row">
+                {% for img in Images %}
+                <div class="col-md-4 my-2">
+                    <div class="card" style="width: 15rem">
+                        <img src="{{img.Image.url}}" alt="No Image Found" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">{{img.Title}}</h5>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}
+

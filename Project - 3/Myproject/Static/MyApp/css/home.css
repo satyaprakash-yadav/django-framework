@@ -1,0 +1,24 @@
+body{
+    background-color: beige;
+}
+
+h1{
+    text-align: center;
+    color: green;
+    text-decoration: underline;
+}
+
+.container-fluid a i{
+    color: green;
+}
+
+.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show > .nav-link {
+    color: rgba(0,0,0,.55);
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: green;
+}
+
+
+

@@ -1,0 +1,26 @@
+.navbar{
+    background-color:rgb(23, 124, 232);
+    margin-top: -16px;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.navbar ul{
+    overflow: auto;
+}
+
+.navbar li{
+    float: left;
+    list-style: none;
+    margin: 13px ;
+}
+
+.navbar li a{
+    padding: 13px 3px;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar li a:hover{
+    color: aquamarine;
+}
