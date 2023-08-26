@@ -1,0 +1,25 @@
+.add{
+    width: 30%;
+    float: right;
+    margin-right:40%;
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 50%;
+    margin-top: 20px;
+}
+
+.list-group{
+    margin-top: 30px;
+}
+
+label, li, input{
+    cursor: pointer;
+}
+

@@ -1,0 +1,67 @@
+{% extends 'PollApp/base.html' %}
+{% load static %}
+{% block title %}register{% endblock title %}
+
+{% block body %}
+    <div class="containers">
+        <div class="row mt-5">
+            <div class="col-lg-4 bg-white m-auto rounded-top wrapper">
+                <h2 class='text-center pt-3 text-success'>Signup Now</h2>
+                <p class="text-center text-muted lead mb-4">It's Free and Takes a Minute</p>
+                <!-- form start -->
+                <form action="{% url 'register' %}" method="post">
+                    {% csrf_token %}
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+                        {% comment %} <input type="text" class="form-control" placeholder="Username"> {% endcomment %}
+                        {{form.username}}
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+                        {% comment %} <input type="text" class="form-control" placeholder="First Name"> {% endcomment %}
+                        {{form.first_name}}
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+                        {% comment %} <input type="text" class="form-control" placeholder="Last Name"> {% endcomment %}
+                        {{form.last_name}}
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
+                        {% comment %} <input type="email" class="form-control" placeholder="Email"> {% endcomment %}
+                        {{form.email}}
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                        {% comment %} <input type="password" class="form-control" placeholder="Password"> {% endcomment %}
+                        {{form.password1}}
+                    </div>                    
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                        {% comment %} <input type="password" class="form-control" placeholder="Confirm Password"> {% endcomment %}
+                        {{form.password2}}
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-success">Signup Now</button>
+                        <p class="text-center text-muted mt-2">
+                            When You Register by Clicking Signup Button, You Agree to our 
+                            <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>
+                        </p>
+
+                        <p class="text-center">
+                            Already Have an Account ? <a href="{% url 'login' %}"> Login Here </a>
+                        </p>
+                    </div>
+                </form>
+                <!-- form close -->
+            </div>
+        </div>
+    </div>
+{% endblock body %}
+

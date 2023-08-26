@@ -1,0 +1,24 @@
+{% extends 'PollApp/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+
+{% block body %}
+    
+    <h3 class="mt-4"><strong>Django Poll Application</strong></h3>
+    
+    <a class="btn btn-outline-primary btn-sm mt-2" href="{% url 'create-record' %}">
+        Add poll record &nbsp; <i class="bi bi-plus-circle" aria-hidden="true"></i>
+    </a>
+
+    <div class="list-group">
+        {% for record in records %}
+        <a href=" {% url 'vote' record.id %} " class="list-group-item list-group-item-action">
+            <h5>{{record.question}}</h5></a>
+       {% endfor %}
+        
+    </div>
+
+{% endblock body %}
+
+
