@@ -4,7 +4,8 @@ from . forms import CreateRecordForm, CreateUserForm
 from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.models import auth
-from . models import PollRecord, Vote
+from . models import PollRecord
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -62,19 +63,34 @@ def create_record(request):
 
 def vote(request, pk):
     records = PollRecord.objects.get(id=pk)
+
+    if request.method == "POST":
+        selected_option = request.POST['poll']
+        if selected_option == 'option1':
+            records.vote_one += 1
+
+        elif selected_option == 'option2':
+            records.vote_two += 1
+
+        elif selected_option == 'option3':
+            records.vote_three += 1
+
+        elif selected_option == 'option4':
+            records.vote_four += 1
+
+        else:
+            return HttpResponse(400, 'Invalid form')
+        
+        records.save()
+
+        return redirect('result', records.id)
+        
     return render(request, 'PollApp/vote.html', {'records':records})
 
 
 def result(request, pk):
     records = PollRecord.objects.get(id=pk)
-    vote = Vote.objects.all()
-    if request.method == 'POST':
-        value = request.POST['choice']
-        selection_option = vote.get(id=value)
-        selection_option.vote += 1
-        selection_option.save()
-    # Vote.objects.all().update(vote=value)
-    return render(request, 'PollApp/result.html', {'records':records, 'votes': vote})
+    return render(request, 'PollApp/result.html', {'records':records})
 
 def logout(request):
     auth.logout(request)

@@ -1,7 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
-from . models import PollRecord, Vote
+from . models import PollRecord
 from django.forms import PasswordInput
 
 
@@ -33,16 +33,10 @@ class CreateRecordForm(forms.ModelForm):
         model = PollRecord
         fields = ['question', 'option1', 'option2', 'option3', 'option4']
         widgets = {
-           'question' : forms.TextInput(attrs={'size':30,'style': 'font-size: large'}),
-           'option1' : forms.TextInput(attrs={'size':30,'style': 'font-size: large'}),
-           'option2' : forms.TextInput(attrs={'size':30,'style': 'font-size: large'}),
-           'option3' : forms.TextInput(attrs={'size':30,'style': 'font-size: large'}),
-           'option4' : forms.TextInput(attrs={'size':30,'style': 'font-size: large'}),
+           'question' : forms.TextInput(attrs={'class':'form-control','style': 'font-size: large'}),
+           'option1' : forms.TextInput(attrs={'class':'form-control','style': 'font-size: large'}),
+           'option2' : forms.TextInput(attrs={'class':'form-control','style': 'font-size: large'}),
+           'option3' : forms.TextInput(attrs={'class':'form-control','style': 'font-size: large'}),
+           'option4' : forms.TextInput(attrs={'class':'form-control','style': 'font-size: large'}),
            }
 
-# class Voting(forms.ModelForm):
-
-#     class Meta:
-#         model = Vote
-#         fields = ['question','vote']
-          

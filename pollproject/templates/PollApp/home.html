@@ -13,8 +13,8 @@
 
     <div class="list-group">
         {% for record in records %}
-        <a href=" {% url 'vote' record.id %} " class="list-group-item list-group-item-action">
-            <h5>{{record.question}}</h5></a>
+        <a href=" {% url 'vote' record.id %} " class="list-group-item list-group-item-action w-auto">
+            <h5><span>{{forloop.counter }} . {{ record.question | lower | capfirst }}</span></h5></a>
        {% endfor %}
         
     </div>

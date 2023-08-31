@@ -16,12 +16,18 @@ class PollRecord(models.Model):
 
     option4 = models.CharField(max_length=50)
 
+    vote_one = models.IntegerField(default=0)
+
+    vote_two = models.IntegerField(default=0)
+
+    vote_three = models.IntegerField(default=0)
+
+    vote_four = models.IntegerField(default=0)
+
+    def clean(self):
+        self.question = self.question.capitalize()
+
     def __str__(self):
         return self.question
-    
-class Vote(models.Model):
-    question = models.ForeignKey(PollRecord, on_delete=models.CASCADE, related_name='choices')
-    vote = models.IntegerField(default=0)
-
 
 

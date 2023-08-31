@@ -4,7 +4,7 @@
 {% block title %}Login{% endblock title %}
 
 {% block body %}
-<div class="containers">
+<div class="container">
     <div class="row mt-5">
         <div class="col-lg-4 bg-white m-auto rounded-top wrapper">
             <h2 class='text-center pt-3 text-success pb-3'>Login Now</h2>
@@ -19,7 +19,8 @@
 
                 <div class="input-group mb-3">
                     <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
-                    <input type="password" name="password" class="form-control" placeholder="Password">
+                    <input type="password" name="password" class="form-control" placeholder="Password" id="password" onclick="ShowPass()">
+                    <span class="input-group-text"><i class="bi bi-eye-slash-fill" id="eyeicon"></i></span>
                 </div>                    
 
                 <div class="d-grid">

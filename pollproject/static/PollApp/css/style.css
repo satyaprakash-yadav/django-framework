@@ -1,18 +1,12 @@
-.add{
+/* .add{
     width: 30%;
     float: right;
     margin-right:40%;
-}
-
-*{
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
-}
+} */
 
 .container{
-    width: 50%;
-    margin-top: 20px;
+    /* width: 50%; */
+    margin-top: 100px;
 }
 
 .list-group{
@@ -21,5 +15,18 @@
 
 label, li, input{
     cursor: pointer;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(20, 3, 3, 0.988);
+}
+
+body::-webkit-scrollbar{
+    background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: linear-gradient(red, blue, green);
+    border-radius: 10px;
 }
 

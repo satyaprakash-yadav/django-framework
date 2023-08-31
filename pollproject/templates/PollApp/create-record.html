@@ -5,24 +5,25 @@
 {% block body %}
 
 <body>
-    <div class="container bg-light shadow p-5 form-layout w-100 mt-3">
-        <h3 class="lead fs-3"> Add poll record </h3>
-
-        <hr>
+    
 
         <form method="post" autocomplete="off">
             {% csrf_token %}
 
-            {% for f in form %}
-                <div class="fw-bolder">
-                    {{f.label_tag}} 
-                    <span class="add">{{f}}</span>
-                    <hr>
-                    <span style="color: red;">{{f.errors}}</span>
+            <div class="container border rounded p-1 text-center bg-primary m-3 w-auto">
+                <h1 class="text-light">Add Poll Record</h1>
+            </div>
+
+            {% for fm in form %}
+                <div class="fw-bolder col-12 px-3 my-4">
+                    {{ fm.label_tag }} 
+                    <span>{{ fm }}</span>
+                 
+                    <span style="color: red;">{{fm.errors}}</span>
                 </div>
             {% endfor %}
         
-        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="submit" class="btn btn-primary mx-3">Save</button>
 
            &nbsp;
 
